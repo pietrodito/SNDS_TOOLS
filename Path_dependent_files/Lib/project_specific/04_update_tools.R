@@ -1,0 +1,15 @@
+update_tools <- function() {
+  export_project_to_txt()
+  current_project_path <- getwd()
+  project_name <- str_extract(current_project_path, "[^/]*$")
+  sh("mv ./R/01-sql-orchestration.R ./R/01-sql-orchestration.bak")
+  sh("mv ./sql/00_user_macros.m4 ./sql/00_user_macros.m4.bak")
+  setwd("<hard-coded-path>")
+  source("00-start-snds-tools.R")
+  create_project(project_name, update = TRUE)
+  setwd(current_project_path)
+  sh("mv ./R/01-sql-orchestration.bak ./R/01-sql-orchestration.R ")
+  sh("mv ./sql/00_user_macros.m4.bak ./sql/00_user_macros.m4")
+  rm(list = ls(envir = .GlobalEnv), envir = .GlobalEnv)
+  source("R/00-setup-new-session.R")
+}
