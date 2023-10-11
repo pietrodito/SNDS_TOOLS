@@ -1,14 +1,19 @@
 # TODO
 
+## Infos diags actes
++ DP des UM dans table UM
++ Date exacte des actes
++ Quid des DR
+
 ## Oracle -
 + download_table() faire un alias cours eg: ot qui n'affiche pas le dwnld sur console
 + allow that '/' not the mostleft char to separate queries
 
 
+
 ## DCIR - mapping ANO-PSA
 
 ### POUR RECUPERER ALD ET CS
-
 
 + recuperer_consultation(TABLE_MAP_ANO_PSA, TABLE_LISTE_TYPE_CONSULTATION)
 
